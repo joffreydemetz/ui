@@ -1,0 +1,42 @@
+{
+    "name": "jdz/ui",
+    "type": "library",
+    "description": "Shared UI display layer (HTML attribute helpers, WYSIWYG content cleaner, lazy/zoom image tags with on-demand thumbnails) extended by jdz/frontui and jdz/adminui",
+    "keywords": [
+        "JDZ",
+        "html",
+        "ui",
+        "image",
+        "thumbnails"
+    ],
+    "homepage": "https://jdz.joffreydemetz.com/ui",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joffrey Demetz",
+            "email": "joffrey.demetz@gmail.com",
+            "homepage": "https://joffreydemetz.com",
+            "role": "Lead"
+        }
+    ],
+    "require": {
+        "php": ">=8.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JDZ\\Ui\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JDZ\\Ui\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit --colors=always --testdox",
+        "test-coverage": "phpunit --coverage-html coverage"
+    }
+}
