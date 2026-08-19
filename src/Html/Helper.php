@@ -53,7 +53,7 @@ abstract class Helper
         $html = preg_replace_callback("/<img ([^>]+)>/", function ($m) {
             $attrs = Attributes::parse($m[1]);
 
-            if (isset($attrs['alt'])) {
+            if (!isset($attrs['alt'])) {
                 $attrs['alt'] = '';
             }
 
