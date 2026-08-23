@@ -33,7 +33,7 @@ abstract class Helper
         $html = str_replace('À', 'À', $html);
         $html = str_replace('&nbsp;', ' ', $html);
 
-        $html = strip_tags($html, '<code><span><div><label><a><br><p><b><i><del><strike><u><img><video><audio><iframe><object><embed><param><blockquote><mark><cite><small><ul><ol><li><hr><dl><dt><dd><sup><sub><big><pre><code><figure><figcaption><strong><em><table><tr><td><th><tbody><thead><tfoot><h1><h2><h3><h4><h5><h6><footer><header><svg><g><image>');
+        $html = strip_tags($html, '<code><span><div><label><a><br><p><b><i><del><strike><s><u><img><video><audio><iframe><object><embed><param><blockquote><mark><cite><small><ul><ol><li><hr><dl><dt><dd><sup><sub><big><pre><code><figure><figcaption><strong><em><table><tr><td><th><tbody><thead><tfoot><h1><h2><h3><h4><h5><h6><footer><header><svg><g><image>');
 
         $html = str_replace("’", "'", $html);
 
