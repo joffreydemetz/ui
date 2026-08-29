@@ -28,9 +28,14 @@ $image = new Image(
 );
 
 echo $image->render('media/photos/le-parc.jpg', 'Le parc', false, 120);
-// <img src="/thumbs/media_photos_le-parc.jpg-120.jpg" alt="Le parc"
+// <img src="/thumbs/media_photos_le-parc.jpg-120.jpg" alt="Le parc" width="120" height="80"
 //      loading="lazy" data-orientation="landscape" data-src="/media/photos/le-parc.jpg" />
 ```
+
+`width`/`height` are the intrinsic size of the file in `src` (the thumb here),
+so the browser reserves the slot before the lazy load — no layout shift. They
+are hints, not sizing: with the `img { height: auto }` reset (jizy-basics ships
+it) any CSS `width` keeps the ratio exactly as it would without them.
 
 `data-src` pairs with a lazy loader (jizy-front/lozad swaps the thumb for the
 original on scroll); `data-zoom` pairs with a picture viewer; both are inert
