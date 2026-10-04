@@ -4,7 +4,7 @@ Shared UI display layer for the JDZ packages — the base both
 [`jdz/frontui`](https://jdz.joffreydemetz.com/frontui) and
 [`jdz/adminui`](https://jdz.joffreydemetz.com/adminui) extend.
 
-No framework, no Twig, no dependency beyond PHP 8.2.
+No framework, no Twig, no dependency beyond PHP 8.2 — `ext-gd` only for the opt-in thumbnails (without it the original image is served).
 
 ## What's inside
 

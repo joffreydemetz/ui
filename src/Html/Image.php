@@ -135,6 +135,10 @@ class Image
         if ($srcW <= $width) {
             return null;
         }
+        // GD is optional (composer "suggest"): without it the original is served.
+        if (!function_exists('imagecreatetruecolor')) {
+            return null;
+        }
 
         $targetW = $width;
         $targetH = (int) floor($srcH * ($width / $srcW));
@@ -185,9 +189,6 @@ class Image
             \IMAGETYPE_GIF => imagegif($thumb, $thumbAbs),
             default => false,
         };
-
-        imagedestroy($image);
-        imagedestroy($thumb);
 
         return ($ok && is_file($thumbAbs)) ? $result : null;
     }
