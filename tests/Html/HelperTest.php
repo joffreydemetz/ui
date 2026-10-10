@@ -85,4 +85,14 @@ class HelperTest extends TestCase
         $this->assertStringContainsString('ok', $cleaned);
         $this->assertStringNotContainsString('<p></p>', $cleaned);
     }
+
+    /**
+     * An empty paragraph after content is dropped: the pattern had a stray quote
+     * and only matched `<p></p>"`.
+     */
+    public function testCleanDropsEmptyParagraphsAfterContent(): void
+    {
+        $this->assertSame('<p>Hello</p><p>World</p>', Helper::clean('<p>Hello</p><p> </p><p>World</p><p></p>'));
+        $this->assertSame('<p>Hello</p>', Helper::clean('<p>Hello<br /> </p>'));
+    }
 }

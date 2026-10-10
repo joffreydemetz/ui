@@ -67,7 +67,7 @@ abstract class Helper
         $html = str_replace("'", "’", $html);
 
         $html = mb_ereg_replace('<br />\s*</p>', '</p>', $html);
-        $html = mb_ereg_replace('<p>\s*</p>"', '', $html);
+        $html = mb_ereg_replace('<p>\s*</p>', '', $html);
 
         return $html;
     }
