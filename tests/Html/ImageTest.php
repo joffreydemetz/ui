@@ -55,7 +55,7 @@ class ImageTest extends TestCase
 
         $html = $image->render('media/nope.jpg', '', true);
 
-        $this->assertStringContainsString('data-zoom="media/nope.jpg"', $html);
+        $this->assertStringContainsString('data-zoom="/media/nope.jpg"', $html);
     }
 
     public function testRealImageGetsOrientationAndThumb(): void
@@ -92,7 +92,7 @@ class ImageTest extends TestCase
         );
         // Source narrower than the requested width: no thumb, original dimensions.
         $this->assertSame(
-            '<img src="/media/tall.jpg" alt="Tall" width="200" height="400" loading="lazy" data-orientation="portrait" data-zoom="media/tall.jpg" />',
+            '<img src="/media/tall.jpg" alt="Tall" width="200" height="400" loading="lazy" data-orientation="portrait" data-zoom="/media/tall.jpg" />',
             $image->render('media/tall.jpg', 'Tall', true, 800)
         );
     }

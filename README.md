@@ -39,7 +39,8 @@ it) any CSS `width` keeps the ratio exactly as it would without them.
 
 `data-src` pairs with a lazy loader (jizy-front/lozad swaps the thumb for the
 original on scroll); `data-zoom` pairs with a picture viewer; both are inert
-without JS.
+without JS. Like `src`, both are root-absolute (`/media/…`), so they resolve on
+any page without a `<base href>`.
 
 ## The rich-text whitelist
 

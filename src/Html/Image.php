@@ -100,7 +100,7 @@ class Image
         }
 
         if ($zoom) {
-            $attrs['data-zoom'] = $src;
+            $attrs['data-zoom'] = '/' . $src;
         }
 
         return $this->tag($attrs);
